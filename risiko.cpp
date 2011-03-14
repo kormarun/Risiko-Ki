@@ -153,7 +153,7 @@ bool Risiko::createFromFile(char* file)
 					string s= p[0];
                                         replace (s.begin(),s.end(),'_',' ');
 
-                                        int i = atoi(p[1]);
+                                        int i = atoi(p[1].c_str());
                                         felder.setNode(s,i);
 //					cout << "Erstelle Land:" << p[0] <<" Index:" << felder.getNumNodes () << endl;
 					continue;

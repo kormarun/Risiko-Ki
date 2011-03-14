@@ -23,11 +23,20 @@
 
 int main (int argc, char *argv[])
 {
-
+/*
 	Risiko* r = new Risiko();
-	r->createDefault ();
+        r->createDefault ();*/
+
+        Ramdisk* rd = new Ramdisk();
+
+        Spieler* spieler1 = new Spieler("ramdisk/test",1,rd);
+        string s;
+        if(spieler1->actionAngreifen(s))
+        {
+            cout << s << endl;
+        }
 	
-	while( 1 );
+        delete (rd);
 
 	return 0; 
 }

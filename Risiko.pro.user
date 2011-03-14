@@ -78,7 +78,8 @@
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">BROWSER=/usr/bin/www-browser</value>
     <value type="QString">CANBERRA_DRIVER=pulse</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-OAtSqZFixh,guid=fa3b9c5fab42f1d4cd6a65e400001797</value>
+    <value type="QString">COLORTERM=gnome-terminal</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-HJ5gSIBYAv,guid=1211a02346c887b704b1a35b0000003c</value>
     <value type="QString">DESKTOP_SESSION=02GNOME</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GCONF_TMPDIR=/tmp</value>
@@ -86,9 +87,9 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=de	nodeadkeys</value>
     <value type="QString">GDM_LANG=de_DE.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-ZkYs7l</value>
-    <value type="QString">GNOME_KEYRING_PID=23336</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-PAgs9o/S.gpg-agent:1423:1</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-wTpJLg</value>
+    <value type="QString">GNOME_KEYRING_PID=1587</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-5C8v8Q/S.gpg-agent:2011:1</value>
     <value type="QString">GTK_MODULES=gail:atk-bridge</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/niels/.gtkrc-1.2-gnome2</value>
     <value type="QString">G_FILENAME_ENCODING=@locale</value>
@@ -99,6 +100,7 @@
     <value type="QString">INPUTRC=/etc/inputrc</value>
     <value type="QString">LADSPA_PATH=/usr/lib64/ladspa/</value>
     <value type="QString">LANG=de_DE.UTF-8</value>
+    <value type="QString">LANGUAGE=</value>
     <value type="QString">LC_SOURCED=1</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib64/qtcreator/lib/qtcreator</value>
     <value type="QString">LESS=-MM</value>
@@ -106,7 +108,7 @@
     <value type="QString">LESSKEY=/etc/.less</value>
     <value type="QString">LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
     <value type="QString">LOGNAME=niels</value>
-    <value type="QString">LS_COLORS=</value>
+    <value type="QString">LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.iso=01;31:*.jpg=01;35:*.jpeg=01;35:*.JPG=01;35:*.JPEG=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.ico=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.divx=01;35:*.xvid=01;35:*.3gp=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:*.mp2=00;36:*.mod=00;36:*.xm=00;36:*.s3m=00;36:*.it=00;36:*.wma=00;36:*~=47;30:*.bak=47;30:*.swp=47;30:*.bck=47;30:*.bk=47;30:*.old=47;30:*.tmp=47;30:*.save=47;30:*.rpmsave=47;30:*.rpmnew=47;30:</value>
     <value type="QString">MAIL=/var/spool/mail/niels</value>
     <value type="QString">MDV_MENU_STYLE=mandriva</value>
     <value type="QString">META_CLASS=download</value>
@@ -114,9 +116,9 @@
     <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-niels</value>
     <value type="QString">PATH=/usr/lib/qt4/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/lib/qt4/bin:/home/niels/bin:/usr/lib/ssh</value>
     <value type="QString">PILOTPORT=usb:</value>
-    <value type="QString">PWD=/home/niels</value>
+    <value type="QString">PWD=/home/niels/risiko/Risiko</value>
     <value type="QString">PYTHONDONTWRITEBYTECODE=1</value>
-    <value type="QString">PYTHONPATH=/usr/lib64/ooo/basis-link/program:/usr/lib64/ooo/basis-link/program</value>
+    <value type="QString">PYTHONPATH=/usr/lib64/ooo/basis-link/program:/usr/lib64/ooo/basis-link/program:/usr/lib64/ooo/basis-link/program</value>
     <value type="QString">PYTHONSTARTUP=/etc/pythonrc.py</value>
     <value type="QString">QT4DOCDIR=/usr/share/doc/qt4/doc</value>
     <value type="QString">QTDIR=/usr/lib/qt4</value>
@@ -124,19 +126,21 @@
     <value type="QString">QTLIB=/usr/lib64</value>
     <value type="QString">QT_XFT=0</value>
     <value type="QString">SCREENDIR=/home/niels/tmp</value>
-    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/23343,unix/jrn1:/tmp/.ICE-unix/23343</value>
+    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/1594,unix/jrn1:/tmp/.ICE-unix/1594</value>
     <value type="QString">SHELL=/bin/bash</value>
-    <value type="QString">SHLVL=0</value>
-    <value type="QString">SSH_AGENT_PID=1398</value>
+    <value type="QString">SHLVL=2</value>
+    <value type="QString">SSH_AGENT_PID=1983</value>
     <value type="QString">SSH_ASKPASS=/usr/lib64/ssh/ssh-askpass</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-ZkYs7l/ssh</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-JATfSA1982/agent.1982</value>
+    <value type="QString">TERM=xterm</value>
     <value type="QString">TMP=/tmp/</value>
     <value type="QString">TMPDIR=/tmp/</value>
     <value type="QString">USER=niels</value>
-    <value type="QString">WINDOWPATH=8</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-P3N8oN/database</value>
+    <value type="QString">WINDOWID=33554437</value>
+    <value type="QString">WINDOWPATH=7</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-fYqoSE/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg:/etc/xdg/gnome</value>
-    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1300018689.287777-58091395</value>
+    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1300026306.160261-1352193044</value>
     <value type="QString">XMODIFIERS=@im=none</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -158,7 +162,8 @@
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">BROWSER=/usr/bin/www-browser</value>
     <value type="QString">CANBERRA_DRIVER=pulse</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-OAtSqZFixh,guid=fa3b9c5fab42f1d4cd6a65e400001797</value>
+    <value type="QString">COLORTERM=gnome-terminal</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-HJ5gSIBYAv,guid=1211a02346c887b704b1a35b0000003c</value>
     <value type="QString">DESKTOP_SESSION=02GNOME</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GCONF_TMPDIR=/tmp</value>
@@ -166,9 +171,9 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=de	nodeadkeys</value>
     <value type="QString">GDM_LANG=de_DE.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-ZkYs7l</value>
-    <value type="QString">GNOME_KEYRING_PID=23336</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-PAgs9o/S.gpg-agent:1423:1</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-wTpJLg</value>
+    <value type="QString">GNOME_KEYRING_PID=1587</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-5C8v8Q/S.gpg-agent:2011:1</value>
     <value type="QString">GTK_MODULES=gail:atk-bridge</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/niels/.gtkrc-1.2-gnome2</value>
     <value type="QString">G_FILENAME_ENCODING=@locale</value>
@@ -179,6 +184,7 @@
     <value type="QString">INPUTRC=/etc/inputrc</value>
     <value type="QString">LADSPA_PATH=/usr/lib64/ladspa/</value>
     <value type="QString">LANG=de_DE.UTF-8</value>
+    <value type="QString">LANGUAGE=</value>
     <value type="QString">LC_SOURCED=1</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib64/qtcreator/lib/qtcreator</value>
     <value type="QString">LESS=-MM</value>
@@ -186,7 +192,7 @@
     <value type="QString">LESSKEY=/etc/.less</value>
     <value type="QString">LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
     <value type="QString">LOGNAME=niels</value>
-    <value type="QString">LS_COLORS=</value>
+    <value type="QString">LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.iso=01;31:*.jpg=01;35:*.jpeg=01;35:*.JPG=01;35:*.JPEG=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.ico=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.divx=01;35:*.xvid=01;35:*.3gp=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:*.mp2=00;36:*.mod=00;36:*.xm=00;36:*.s3m=00;36:*.it=00;36:*.wma=00;36:*~=47;30:*.bak=47;30:*.swp=47;30:*.bck=47;30:*.bk=47;30:*.old=47;30:*.tmp=47;30:*.save=47;30:*.rpmsave=47;30:*.rpmnew=47;30:</value>
     <value type="QString">MAIL=/var/spool/mail/niels</value>
     <value type="QString">MDV_MENU_STYLE=mandriva</value>
     <value type="QString">META_CLASS=download</value>
@@ -194,9 +200,9 @@
     <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-niels</value>
     <value type="QString">PATH=/usr/lib/qt4/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/lib/qt4/bin:/home/niels/bin:/usr/lib/ssh</value>
     <value type="QString">PILOTPORT=usb:</value>
-    <value type="QString">PWD=/home/niels</value>
+    <value type="QString">PWD=/home/niels/risiko/Risiko</value>
     <value type="QString">PYTHONDONTWRITEBYTECODE=1</value>
-    <value type="QString">PYTHONPATH=/usr/lib64/ooo/basis-link/program:/usr/lib64/ooo/basis-link/program</value>
+    <value type="QString">PYTHONPATH=/usr/lib64/ooo/basis-link/program:/usr/lib64/ooo/basis-link/program:/usr/lib64/ooo/basis-link/program</value>
     <value type="QString">PYTHONSTARTUP=/etc/pythonrc.py</value>
     <value type="QString">QT4DOCDIR=/usr/share/doc/qt4/doc</value>
     <value type="QString">QTDIR=/usr/lib/qt4</value>
@@ -204,19 +210,21 @@
     <value type="QString">QTLIB=/usr/lib64</value>
     <value type="QString">QT_XFT=0</value>
     <value type="QString">SCREENDIR=/home/niels/tmp</value>
-    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/23343,unix/jrn1:/tmp/.ICE-unix/23343</value>
+    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/1594,unix/jrn1:/tmp/.ICE-unix/1594</value>
     <value type="QString">SHELL=/bin/bash</value>
-    <value type="QString">SHLVL=0</value>
-    <value type="QString">SSH_AGENT_PID=1398</value>
+    <value type="QString">SHLVL=2</value>
+    <value type="QString">SSH_AGENT_PID=1983</value>
     <value type="QString">SSH_ASKPASS=/usr/lib64/ssh/ssh-askpass</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-ZkYs7l/ssh</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-JATfSA1982/agent.1982</value>
+    <value type="QString">TERM=xterm</value>
     <value type="QString">TMP=/tmp/</value>
     <value type="QString">TMPDIR=/tmp/</value>
     <value type="QString">USER=niels</value>
-    <value type="QString">WINDOWPATH=8</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-P3N8oN/database</value>
+    <value type="QString">WINDOWID=33554437</value>
+    <value type="QString">WINDOWPATH=7</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-fYqoSE/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg:/etc/xdg/gnome</value>
-    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1300018689.287777-58091395</value>
+    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1300026306.160261-1352193044</value>
     <value type="QString">XMODIFIERS=@im=none</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>

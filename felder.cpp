@@ -84,7 +84,7 @@ bool Felder::setNode(Land* land)
 	lands_orig.push_back(land);
 }
 
-bool Felder::setNode(string id)
+bool Felder::setNode(string id, int k)
 {
 	setNode(new Land(id));
 }

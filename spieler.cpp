@@ -20,6 +20,14 @@
 #include "spieler.hpp"
 #include "common.hpp"
 
+
+char* itoa(int id)
+{
+    char* i;
+    sprintf(i,"%d",id);
+    return i;
+}
+
 /* Ramdisk
  * Initialisierung einer Ramdisk
  * @TODO: Code für LINUX + WINDOWS + Ersatzcode wenn keine Adminrechte -> Ersatzort für Ramdisk(~/tmp/)
@@ -27,18 +35,157 @@
 Ramdisk::Ramdisk()
 {
 #ifdef __linux__ || __unix || __unix__
-    system('')
-#elif __WIN32__ || _MSC_VER
 
+    if(getenv("USER")=="root")
+    {
+        if(system("mkdir ramdisk/")!=0)
+            exit(1);
+        if(system("mount -t tmpfs -o size=30M tmpfs ramdisk/")!=0)
+            exit(1);
+    }
+    else
+    {
+        if(system("mkdir ramdisk/")!=0)
+            exit(1);
+    }
+
+    dir="ramdisk/";
+#elif __WIN32__ || _MSC_VER
+/*KP*/
 #endif
 };
 
-Spieler::Spieler(string name):filename(name){};
+Ramdisk::~Ramdisk()
+{
+    this->clear();
+#ifdef __linux__ || __unix || __unix__
+    if(getenv("USER")=="root")
+    {
+        system("umount ramdisk/");
+        system("rmdir ramdisk/");
+    }
+    else
+    {
+        dir=system("rmdir ramdisk/");
+    }
+#elif __WIN32__ || _MSC_VER
+/*KP*/
+#endif
+};
 
-bool Spieler::actionAngreifen(){}
+bool Ramdisk::clear()
+{
+#ifdef __linux__ || __unix || __unix__
+    string s="rm -rf ";
+    s.append(dir);
+    s.append("/*");
+    int i = system(s.c_str());
+    if(i!=0)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+#elif __WIN32__ || _MSC_VER
+/*KP*/
+#endif
+}
 
-bool Spieler::actionStart(){}
+bool Ramdisk::storefile(string filename, string data)
+{
+    filename.insert(0,dir);
+    ofstream datei;
+    datei.open(filename.c_str(),ios::out);
+    if(datei.is_open())
+    {
+        datei << data;
+        if(datei.fail())
+        {
+            datei.close();
+            return false;
+        }
+        datei.close();
+        return true;
+    }
+    return false;
 
-bool Spieler::actionVerstaerkung(){}
+}
+
+bool Ramdisk::readfile(string filename, string& data)
+{
+    filename.insert(0,dir);
+    ifstream datei;
+    datei.open(filename.c_str(), ios::in);
+    if(datei.is_open())
+    {
+        string buffer;
+        datei >> buffer;
+        if(datei.fail())
+        {
+            datei.close();
+            return false;
+        }
+        data = buffer;
+        datei.close();
+        return true;
+    }
+    return false;
+}
+
+
+string Ramdisk::getDir() const
+{
+    return dir;
+}
+
+Spieler::Spieler(string name, int sid, Ramdisk* ramd)
+{
+    filename = name;
+    id = sid;
+    process = new QProcess();
+
+    list << " -sid " ;
+    list << itoa(sid);
+
+    rd = ramd;
+}
+
+Spieler::~Spieler()
+{
+    delete process;
+}
+
+bool Spieler::actionAngreifen(string& ret)
+{
+    rd->storefile(itoa(id),"Attack");
+    process->start(filename.c_str(), list);
+    bool b = process->waitForFinished(5000);
+    if(b==false)
+        process->close();
+}
+
+bool Spieler::actionStart(string& ret){
+    if(!rd->storefile(itoa(id),"GEBIETSBESETZEN"))
+    {
+        return false;
+    }
+    cout << "Data to file" << endl;
+    process->start(filename.c_str(), list);
+    bool b = process->waitForFinished(5000);
+    if(b==false)
+        process->close();
+    cout << "process stopped"<<endl;
+    string s;
+    if(!rd->readfile(itoa(id),s))
+    {
+        return false;
+    }
+    ret=s;
+    return true;
+}
+
+bool Spieler::actionVerstaerkung(string& ret){}
 
 string Spieler::doLog() const {}

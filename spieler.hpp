@@ -20,26 +20,41 @@
 #define SPIELER_H
 
 #include "common.hpp"
+#include <QProcess>
 
 class Ramdisk {
     public:
         Ramdisk();
         Ramdisk(string filename);
+        ~Ramdisk();
+
+        bool storefile(string filename, string data);
+        bool readfile(string filename, string& data);
+
+        string getDir() const;
+
         bool clear();
     private:
+        string dir;
 };
 
 class Spieler {
     public:
-        Spieler(string name);
-        bool actionStart();
-        bool actionAngreifen();
-        bool actionVerstaerkung();
+        Spieler(string name, int sid, Ramdisk* ramd);
+        ~Spieler();
+        bool actionStart(string& ret);
+        bool actionAngreifen(string& ret);
+        bool actionVerstaerkung(string& ret);
         string doLog() const;
     private:
+        string filename;
         string name;
-        bool write(string data);
-        bool read(string& data);
+        int id;
+
+        Ramdisk* rd;
+
+        QProcess* process;
+        QStringList list;
 
 };
 

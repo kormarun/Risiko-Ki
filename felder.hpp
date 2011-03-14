@@ -31,7 +31,7 @@ class Felder{
 
 		//Code für die Arbeit mit dem Dijkstra-Algorythmus
 		bool setNode(Land* land);
-		bool setNode(string id);
+                bool setNode(string id, int k);
 		bool setEdge(Edge* edge);
 		bool setEdge(Land* land1, Land* land2, int distance);
 		bool setEdge(int land1, int land2, int distance);
