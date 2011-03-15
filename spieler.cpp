@@ -36,17 +36,24 @@ Ramdisk::Ramdisk()
 {
 #ifdef __linux__ || __unix || __unix__
 
+    int i;
+    if((i=system("test -d ramdisk || mkdir ramdisk/"))!=0)
+    {
+        cerr << "Konnte Ramdisk-Verzeichnis nicht anlegen: mkdir-Fehlercode: " << i << endl;
+        exit(1);
+    }
+
     if(getenv("USER")=="root")
     {
-        if(system("mkdir ramdisk/")!=0)
+        if((i=system("mount -t tmpfs -o size=30M tmpfs ramdisk/"))!=0)
+        {
+            cerr << "Konnte Ramdisk-Verzeichnis nicht mounten: mount-Fehlercode: " << i << endl;
             exit(1);
-        if(system("mount -t tmpfs -o size=30M tmpfs ramdisk/")!=0)
-            exit(1);
+        }
     }
     else
     {
-        if(system("mkdir ramdisk/")!=0)
-            exit(1);
+        cerr << "Konnte Ramdisk-Verzeichnis nicht mounten: Diese Aktion benötigt Root-Rechte" << endl << "Sie können (wenn auch langsamer) fortfahren" << endl;
     }
 
     dir="ramdisk/";
@@ -134,6 +141,42 @@ bool Ramdisk::readfile(string filename, string& data)
     return false;
 }
 
+bool Ramdisk::copyfile(string filenameto, string filenamefrom)
+{
+
+    filenameto.insert(0,dir);
+
+    ifstream dateiin;
+    dateiin.open(filenamefrom.c_str(), ios::in);
+    if(dateiin.is_open())
+    {
+        string buffer;
+        dateiin >> buffer;
+        if(dateiin.fail())
+        {
+            dateiin.close();
+            return false;
+        }
+        dateiin.close();
+
+        ofstream dateiout;
+        dateiout.open(filenameto.c_str(), ios::out);
+        if(dateiout.is_open())
+        {
+            dateiout << buffer;
+            if(dateiout.fail())
+            {
+                dateiout.close();
+                return false;
+            }
+            dateiout.close();
+            return true;
+        }
+        return false;
+    }
+    return false;
+}
+
 
 string Ramdisk::getDir() const
 {
@@ -159,7 +202,7 @@ Spieler::~Spieler()
 
 bool Spieler::actionAngreifen(string& ret)
 {
-    rd->storefile(itoa(id),"Attack");
+    rd->storefile("action","ATTACK");
     process->start(filename.c_str(), list);
     bool b = process->waitForFinished(5000);
     if(b==false)
@@ -167,7 +210,7 @@ bool Spieler::actionAngreifen(string& ret)
 }
 
 bool Spieler::actionStart(string& ret){
-    if(!rd->storefile(itoa(id),"GEBIETSBESETZEN"))
+    if(!rd->storefile("action","GEBIETSBESETZEN"))
     {
         return false;
     }
@@ -178,7 +221,7 @@ bool Spieler::actionStart(string& ret){
         process->close();
     cout << "process stopped"<<endl;
     string s;
-    if(!rd->readfile(itoa(id),s))
+    if(!rd->readfile("action",s))
     {
         return false;
     }

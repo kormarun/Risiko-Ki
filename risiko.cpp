@@ -130,7 +130,7 @@ bool Risiko::createFromFile(char* file)
 			if(!trim(inhaltzeile)) //Wenn nach Kürzen nurnoch leere Zeile
 				continue;
 
-			//cout << "String: " << inhaltzeile << " ,Länge: " <<inhaltzeile.size() << endl;	
+                        //cout << "String: " << inhaltzeile << " ,Länge: " <<inhaltzeile.size() << endl;
 
 			if(inhaltzeile == "[Land]")
 			{
@@ -148,29 +148,37 @@ bool Risiko::createFromFile(char* file)
 			if(inhalt)
 			{
 				vector<string> p;
-                                if(splitString(inhaltzeile, p, " \t",0)==2)
+                                if(splitString(inhaltzeile, p, " \t",0))
 				{
 					string s= p[0];
                                         replace (s.begin(),s.end(),'_',' ');
 
                                         int i = atoi(p[1].c_str());
-                                        felder.setNode(s,i);
-//					cout << "Erstelle Land:" << p[0] <<" Index:" << felder.getNumNodes () << endl;
+                                        felder.setNode(s,1);
+                                        cout << "Erstelle Land:" << p[0] <<" Index:" << felder.getNumNodes () << endl;
 					continue;
 				}
 			}
 			else if(grenzen)
 			{
 				vector<string> p;
-				if(splitString(inhaltzeile, p, " \t",0)==2)
+                                int c;
+                                if((c=splitString(inhaltzeile, p, " \t",0))!=0)
 				{
-					int i,j;
+                                        int i;
 					i=atoi(p[0].c_str());
-					j=atoi(p[1].c_str());
-					p.clear();
-					
-					felder.setEdge(i,j);
-                                        felder.setEdge(j,i);
+
+                                        while(p.size()>0)
+                                        {
+                                            string s;
+                                            s=p.at(p.size()-1);
+                                            cout << s << endl;
+
+                                            felder.setEdge(i,atoi(s.c_str()));
+                                            cout<< p.size()<<endl;
+
+                                            p.pop_back();
+                                        }
 //					cout << "Setze Grenze zwischen Land " << felder.getNode(i)->getId() << " und " << felder.getNode(j)->getId() <<endl;
 					continue;
 				}

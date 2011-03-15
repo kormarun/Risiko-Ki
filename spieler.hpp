@@ -30,7 +30,7 @@ class Ramdisk {
 
         bool storefile(string filename, string data);
         bool readfile(string filename, string& data);
-
+        bool copyfile(string filenameto, string filenamefrom);
         string getDir() const;
 
         bool clear();
