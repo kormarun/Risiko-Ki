@@ -32,21 +32,37 @@ class Felder{
 		//Code für die Arbeit mit dem Dijkstra-Algorythmus
 		bool setNode(Land* land);
                 bool setNode(string id, int k);
-		bool setEdge(Edge* edge);
+                /*bool setEdge(Edge* edge);
 		bool setEdge(Land* land1, Land* land2, int distance);
-		bool setEdge(int land1, int land2, int distance);
+                bool setEdge(int land1, int land2, int distance);*/
 		bool setEdge(int land1, int land2);
+
 		Land* getNode(int i) const;
 		Land* getNode(int i, bool orig) const;
 		Edge* getEdge(int i) const;
-		int getNumNodes() const;
+                int getNumNodes() const;
 		int getNumEdges() const;
-		int runDijkstra(int source, int dest);
+
+                bool isReachable(int source, int dest);
+                bool hasFreeFields();
+
+
+                bool checkStart(string s);
+                bool checkAngreifen(string s);
+                bool checkVerteidigen(string s);
+                bool checkVerstaerken(string s);
+                bool checkBewegung(string s);
+/*bool makeGraph();//runDijkstra(int source, int dest);
 		stack<Land*> printDijkstraWay(Land* destination);
 		stack<Land*> printDijkstraWay(int destination);
 		void PrintShortestRouteTo(Land* destination);
+*/
+                string getMap() const;
 
 	private:
+                bool isInVector(vector<Land*> vec ,Land* l);
+                bool isReachableRecursive(Land* source, Land* dest, Spieler* sp);
+
 		//Code für die Arbeit mit dem Dijkstra-Algorythmus
 		vector<Land*> lands;
 		vector<Edge*> edges;
@@ -54,9 +70,9 @@ class Felder{
 		vector<Land*> lands_orig;
 		vector<Edge*> edges_orig;
 		
-		vector<Land*>* AdjacentRemainingNodes(Land* land);
+        /*	vector<Land*>* AdjacentRemainingNodes(Land* land);
 		Land* ExtractSmallest(vector<Land*>& lands);
 		int Distance(Land* land1, Land* land2);
-		bool Contains(vector<Land*>& lands, Land* land);
+                bool Contains(vector<Land*>& lands, Land* land);*/
 };
 #endif

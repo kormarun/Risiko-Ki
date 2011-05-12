@@ -24,20 +24,8 @@
 int main (int argc, char *argv[])
 {
 
-	Risiko* r = new Risiko();
+        Risiko* r = new Risiko();
         r->createDefault ();
-
-        Ramdisk* rd = new Ramdisk();
-        rd->copyfile("map","felder/default.dat");
-
-        Spieler* spieler1 = new Spieler("spieler/test",1,rd);
-        string s;
-        if(spieler1->actionAngreifen(s))
-        {
-            cout << s << endl;
-        }
-	
-        delete (rd);
 
 	return 0; 
 }

@@ -56,7 +56,7 @@
   <variable>buildConfiguration-Debug</variable>
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
-   <value key="QtVersionId" type="int">0</value>
+   <value key="QtVersionId" type="int">2</value>
    <value key="ToolChain" type="int">0</value>
    <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">2</value>
@@ -78,8 +78,8 @@
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">BROWSER=/usr/bin/www-browser</value>
     <value type="QString">CANBERRA_DRIVER=pulse</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-RC47u9FVHJ,guid=ded3527ad60f6f418070bf3d00000043</value>
-    <value type="QString">DESKTOP_AUTOSTART_ID=10a133b64a3e0d7084130020128711078300000032200005</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-UjpSee0ciQ,guid=ac7b7af28cded8f6fb96c0b40000004b</value>
+    <value type="QString">DESKTOP_AUTOSTART_ID=109545d22bd5ff0c3c130415383950163300000034010005</value>
     <value type="QString">DESKTOP_SESSION=02GNOME</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GCONF_TMPDIR=/tmp</value>
@@ -87,9 +87,9 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=de	nodeadkeys</value>
     <value type="QString">GDM_LANG=de_DE.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-z4IL6V</value>
-    <value type="QString">GNOME_KEYRING_PID=3213</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-LXknkr/S.gpg-agent:3396:1</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-jmKpao</value>
+    <value type="QString">GNOME_KEYRING_PID=3249</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-SajUO5/S.gpg-agent:3806:1</value>
     <value type="QString">GTK_MODULES=gail:atk-bridge</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/niels/.gtkrc-1.2-gnome2</value>
     <value type="QString">G_FILENAME_ENCODING=@locale</value>
@@ -126,19 +126,19 @@
     <value type="QString">QTLIB=/usr/lib64</value>
     <value type="QString">QT_XFT=0</value>
     <value type="QString">SCREENDIR=/home/niels/tmp</value>
-    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/3220,unix/jrn1:/tmp/.ICE-unix/3220</value>
+    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/3401,unix/jrn1:/tmp/.ICE-unix/3401</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
-    <value type="QString">SSH_AGENT_PID=3371</value>
+    <value type="QString">SSH_AGENT_PID=3773</value>
     <value type="QString">SSH_ASKPASS=/usr/lib64/ssh/ssh-askpass</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-z4IL6V/ssh</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-jmKpao/ssh</value>
     <value type="QString">TMP=/tmp/</value>
     <value type="QString">TMPDIR=/tmp/</value>
     <value type="QString">USER=niels</value>
     <value type="QString">WINDOWPATH=7</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-1F2ifE/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-9OZbkT/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg:/etc/xdg/gnome</value>
-    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1300201282.853584-616551705</value>
+    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1304153831.92199-936288043</value>
     <value type="QString">XMODIFIERS=@im=none</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -160,8 +160,8 @@
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">BROWSER=/usr/bin/www-browser</value>
     <value type="QString">CANBERRA_DRIVER=pulse</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-RC47u9FVHJ,guid=ded3527ad60f6f418070bf3d00000043</value>
-    <value type="QString">DESKTOP_AUTOSTART_ID=10a133b64a3e0d7084130020128711078300000032200005</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-UjpSee0ciQ,guid=ac7b7af28cded8f6fb96c0b40000004b</value>
+    <value type="QString">DESKTOP_AUTOSTART_ID=109545d22bd5ff0c3c130415383950163300000034010005</value>
     <value type="QString">DESKTOP_SESSION=02GNOME</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GCONF_TMPDIR=/tmp</value>
@@ -169,9 +169,9 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=de	nodeadkeys</value>
     <value type="QString">GDM_LANG=de_DE.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-z4IL6V</value>
-    <value type="QString">GNOME_KEYRING_PID=3213</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-LXknkr/S.gpg-agent:3396:1</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-jmKpao</value>
+    <value type="QString">GNOME_KEYRING_PID=3249</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-SajUO5/S.gpg-agent:3806:1</value>
     <value type="QString">GTK_MODULES=gail:atk-bridge</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/niels/.gtkrc-1.2-gnome2</value>
     <value type="QString">G_FILENAME_ENCODING=@locale</value>
@@ -208,19 +208,19 @@
     <value type="QString">QTLIB=/usr/lib64</value>
     <value type="QString">QT_XFT=0</value>
     <value type="QString">SCREENDIR=/home/niels/tmp</value>
-    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/3220,unix/jrn1:/tmp/.ICE-unix/3220</value>
+    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/3401,unix/jrn1:/tmp/.ICE-unix/3401</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
-    <value type="QString">SSH_AGENT_PID=3371</value>
+    <value type="QString">SSH_AGENT_PID=3773</value>
     <value type="QString">SSH_ASKPASS=/usr/lib64/ssh/ssh-askpass</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-z4IL6V/ssh</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-jmKpao/ssh</value>
     <value type="QString">TMP=/tmp/</value>
     <value type="QString">TMPDIR=/tmp/</value>
     <value type="QString">USER=niels</value>
     <value type="QString">WINDOWPATH=7</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-1F2ifE/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-9OZbkT/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg:/etc/xdg/gnome</value>
-    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1300201282.853584-616551705</value>
+    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1304153831.92199-936288043</value>
     <value type="QString">XMODIFIERS=@im=none</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
@@ -236,6 +236,80 @@
   <variable>buildconfiguration-Debug-cleanstep0</variable>
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">BROWSER=/usr/bin/www-browser</value>
+    <value type="QString">CANBERRA_DRIVER=pulse</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ktGiNR3cdC,guid=7edb75c39113620774767ef3000003a3</value>
+    <value type="QString">DESKTOP_AUTOSTART_ID=10bfd27b283b999af213027965355440300000051150005</value>
+    <value type="QString">DESKTOP_SESSION=02GNOME</value>
+    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">GCONF_TMPDIR=/tmp</value>
+    <value type="QString">GDMSESSION=02GNOME</value>
+    <value type="QString">GDM_KEYBOARD_LAYOUT=de	nodeadkeys</value>
+    <value type="QString">GDM_LANG=de_DE.UTF-8</value>
+    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-3ZYVCn</value>
+    <value type="QString">GNOME_KEYRING_PID=5108</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-UqGayQ/S.gpg-agent:5207:1</value>
+    <value type="QString">GTK_MODULES=gail:atk-bridge</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/niels/.gtkrc-1.2-gnome2</value>
+    <value type="QString">G_FILENAME_ENCODING=@locale</value>
+    <value type="QString">HISTCONTROL=ignoredups</value>
+    <value type="QString">HISTSIZE=1000</value>
+    <value type="QString">HOME=/home/niels</value>
+    <value type="QString">HOSTNAME=jrn1</value>
+    <value type="QString">INPUTRC=/etc/inputrc</value>
+    <value type="QString">LADSPA_PATH=/usr/lib64/ladspa/</value>
+    <value type="QString">LANG=de_DE.UTF-8</value>
+    <value type="QString">LANGUAGE=</value>
+    <value type="QString">LC_SOURCED=1</value>
+    <value type="QString">LD_LIBRARY_PATH=/usr/lib64/qtcreator/lib/qtcreator</value>
+    <value type="QString">LESS=-MM</value>
+    <value type="QString">LESSCHARSET=utf-8</value>
+    <value type="QString">LESSKEY=/etc/.less</value>
+    <value type="QString">LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
+    <value type="QString">LOGNAME=niels</value>
+    <value type="QString">LS_COLORS=</value>
+    <value type="QString">MAIL=/var/spool/mail/niels</value>
+    <value type="QString">MDV_MENU_STYLE=mandriva</value>
+    <value type="QString">META_CLASS=download</value>
+    <value type="QString">NLSPATH=/usr/share/locale/%l/%N</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-niels</value>
+    <value type="QString">PATH=/usr/lib/qt4/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/lib/qt4/bin:/home/niels/bin:/usr/lib/ssh</value>
+    <value type="QString">PILOTPORT=usb:</value>
+    <value type="QString">PWD=/usr/lib64/qtcreator</value>
+    <value type="QString">PYTHONDONTWRITEBYTECODE=1</value>
+    <value type="QString">PYTHONPATH=/usr/lib64/ooo/basis-link/program:/usr/lib64/ooo/basis-link/program</value>
+    <value type="QString">PYTHONSTARTUP=/etc/pythonrc.py</value>
+    <value type="QString">QT4DOCDIR=/usr/share/doc/qt4/doc</value>
+    <value type="QString">QTDIR=/usr/lib/qt4</value>
+    <value type="QString">QTINC=/usr/lib/qt3/include</value>
+    <value type="QString">QTLIB=/usr/lib64</value>
+    <value type="QString">QT_XFT=0</value>
+    <value type="QString">SCREENDIR=/home/niels/tmp</value>
+    <value type="QString">SESSION_MANAGER=local/jrn1:@/tmp/.ICE-unix/5115,unix/jrn1:/tmp/.ICE-unix/5115</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SHLVL=1</value>
+    <value type="QString">SSH_AGENT_PID=5182</value>
+    <value type="QString">SSH_ASKPASS=/usr/lib64/ssh/ssh-askpass</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-3ZYVCn/ssh</value>
+    <value type="QString">TMP=/tmp/</value>
+    <value type="QString">TMPDIR=/tmp/</value>
+    <value type="QString">USER=niels</value>
+    <value type="QString">WINDOWPATH=7</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-niels-9OOmQ6/database</value>
+    <value type="QString">XDG_CONFIG_DIRS=/etc/xdg:/etc/xdg/gnome</value>
+    <value type="QString">XDG_SESSION_COOKIE=44dceadaf52ac7fd2946849200000379-1302796531.278006-1062383061</value>
+    <value type="QString">XMODIFIERS=@im=none</value>
+   </valuelist>
+   <value key="abstractProcess.IgnoreReturnValue" type="bool">true</value>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">clean</value>
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/niels/risiko/Risiko</value>
    <value key="cleanConfig" type="bool">true</value>
    <valuelist key="makeargs" type="QVariantList">
     <value type="QString">clean</value>
@@ -302,7 +376,7 @@
  </data>
  <data>
   <variable>defaultFileEncoding</variable>
-  <value type="QByteArray">UTF-8</value>
+  <value type="QByteArray">ISO-8859-13</value>
  </data>
  <data>
   <variable>project</variable>

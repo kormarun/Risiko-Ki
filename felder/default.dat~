@@ -3,58 +3,58 @@
 
 [Land] #Abschnitt der Landdefinitionen beginnt
 #Europa
-	Groß_Britannien 0 #0
-	Irland 0 #1
-	Skandinavien 0 #2
-	Mitteleuropa 0 #3
-	Ukraine 0 #4
-	Südeuropa 0 #5
-	Westeuropa 0 #6
+	Groß_Britannien #0
+	Irland #1
+	Skandinavien #2
+	Mitteleuropa #3
+	Ukraine #4
+	Südeuropa #5
+	Westeuropa #6
 
 #Afrika
-	Ägypten 1 #7
-	Nordwestafrika 1 #8
-	Ostafrika 1 #9
-	Kongo 1 #10
-	Südafrika 1 #11
-	Madagaskar 1 #12
+	Ägypten #7
+	Nordwestafrika #8
+	Ostafrika #9
+	Kongo #10
+	Südafrika #11
+	Madagaskar #12
 
 #Asien
-	Afganistan 2 #13
-	Mittlerer_Osten 2 #14
-	Indien 2 #15
-	China 2 #16
-	Siam 2 #17
-	Mongolei 2 #18
-	Japan 2 #19
-	Ittrusk 2 #20
-	Yakutsk 2 #21
-	Sibirien 2 #22
-	Ural 2 #23
-	Kal 2 #24
+	Afganistan #13
+	Mittlerer_Osten #14
+	Indien #15
+	China #16
+	Siam #17
+	Mongolei #18
+	Japan #19
+	Ittrusk #20
+	Yakutsk #21
+	Sibirien #22
+	Ural #23
+	Kal #24
 
 #Ozeanien
-	Indonesien 3 #25
-	Neu-Guinea 3 #26
-	West-Australien 3 #27
-	Ost-Australien 3 #28
+	Indonesien #25
+	Neu-Guinea #26
+	West-Australien #27
+	Ost-Australien #28
 
 #Nord-Amerika
-	Alaska 4 #29
-	Nordwest-Teritorium 4 #30
-	Alberta 4 #31
-	Grönland 4 #32
-	Ontario 4 #33
-	Quebec 4 #34
-	Ost-USA 4 #35
-	West-USA 4 #36
-	Mexiko 4 #37
+	Alaska #29
+	Nordwest-Teritorium #30
+	Alberta #31
+	Grönland #32
+	Ontario #33
+	Quebec #34
+	Ost-USA #35
+	West-USA #36
+	Mexiko #37
 
 #Süd-Amerika
-	Venezuela 4 #38
-	Peru 4 #39
-	Brasilien 4 #40
-	Argentinien 4 #41
+	Venezuela #38
+	Peru #39
+	Brasilien #40
+	Argentinien #41
 
 [Grenzen] #Abschnitt der Grenzendefinition beginnt
         0 1 2 3 4 6

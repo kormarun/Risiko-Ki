@@ -22,20 +22,24 @@
 #include "common.hpp"
 #include "felder.hpp"
 #include "land.hpp"
+#include "spieler.hpp"
 
 class Risiko {
 	public:
 		Risiko();
+                ~Risiko();
 		bool createDefault();
 		bool createFromFile(char* filename);
 
-		bool exportStandings();
+                bool getLog();
 		
 		bool checkAction();
 		bool moveTroops(short start, short stop, int num);
 		
 	private:
 		Felder felder;
+                Ramdisk* rd;
+                string log;
 };
 
 

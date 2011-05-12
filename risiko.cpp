@@ -104,7 +104,12 @@ bool trim(string& str)
 
 Risiko::Risiko()
 {
-//	felder();
+    rd=new Ramdisk();
+}
+
+Risiko::~Risiko()
+{
+    delete rd;
 }
 
 bool Risiko::createFromFile(char* file)
@@ -148,14 +153,14 @@ bool Risiko::createFromFile(char* file)
 			if(inhalt)
 			{
 				vector<string> p;
-                                if(splitString(inhaltzeile, p, " \t",0))
+                                if(splitString(inhaltzeile, p, " \t",0)==2)
 				{
-					string s= p[0];
-                                        replace (s.begin(),s.end(),'_',' ');
+                                        string s= p[0];//Name des Lands
+                               //         replace (s.begin(),s.end(),'_',' ');
+                                        int i = atoi(p[1].c_str()); //Nummer des Kontinents
+                                        felder.setNode(s,i);
 
-                                        int i = atoi(p[1].c_str());
-                                        felder.setNode(s,1);
-                                        cout << "Erstelle Land:" << p[0] <<" Index:" << felder.getNumNodes () << endl;
+                                        //cout << "Erstelle Land:" << p[0] <<" Index:" << felder.getNumNodes () << endl;
 					continue;
 				}
 			}
@@ -165,18 +170,13 @@ bool Risiko::createFromFile(char* file)
                                 int c;
                                 if((c=splitString(inhaltzeile, p, " \t",0))!=0)
 				{
-                                        int i;
-					i=atoi(p[0].c_str());
+                                        int i=atoi(p[0].c_str());
 
-                                        while(p.size()>0)
+                                        while(p.size()>1)
                                         {
-                                            string s;
-                                            s=p.at(p.size()-1);
-                                            cout << s << endl;
+                                            string s = p.at(p.size()-1);
 
                                             felder.setEdge(i,atoi(s.c_str()));
-                                            cout<< p.size()<<endl;
-
                                             p.pop_back();
                                         }
 //					cout << "Setze Grenze zwischen Land " << felder.getNode(i)->getId() << " und " << felder.getNode(j)->getId() <<endl;
@@ -188,23 +188,78 @@ bool Risiko::createFromFile(char* file)
 			{
 				break;
 			}
-		}
+                }
+                cout << felder.getMap()<<endl;
+                if(rd->storefile("map",felder.getMap()))
+                    return true;
+                return false;
 	}
 	else
 	{
 		cerr << "Konnte Map-File: " <<filename << " nicht öffnen" << endl;
+                return false;
 	}
 }
 
 bool Risiko::createDefault()
 {
-	createFromFile("default.dat");
+        createFromFile("default.dat");
+
+        Spieler* spieler1 = new Spieler("spieler/spieler1",0,rd);
+        Spieler* spieler2 = new Spieler("spieler/spieler2",1,rd);
+        Spieler* spieler3 = new Spieler("spieler/spieler3",2,rd);
+
+        vector<Spieler*> spieler;
+        spieler.push_back(spieler1);
+        spieler.push_back(spieler2);
+        spieler.push_back(spieler3);
+
+        int spielerIt = 0;
+        string actionReturn;
+
+        stringstream log;
+        log << spieler.size() << endl;
+        log << 35 << endl;
+
+        int aktionsnummer=0;
+
+        while(felder.hasFreeFields())
+        {
+            if(spielerIt>=spieler.size())
+                spielerIt=0;
+            if(spieler.at(spielerIt)->actionStart(actionReturn)==true)
+            {
+                cout<<"ret:" << actionReturn << endl;
+                if(actionReturn=="")
+                    exit(3);
+                if(felder.checkStart(actionReturn))
+                    rd->storefile("map",felder.getMap());
+            }
+            else
+            {
+                cout << "Spieler " <<spieler1->getID()<<" antwortet nicht mehr"<<endl;
+                exit(2); //Spieler antwortet nicht innerhalb von 5 sec.
+            }
+            actionReturn.clear();
+           spielerIt++;
+        }/*
+        if(spieler1->actionAngreifen(s))
+        {
+            cout << s << endl;
+        }
+        else
+        {
+
+        }*/
+
+
+        //delete (rd);
 	
-	cout << felder.runDijkstra(41,27) << endl; //Argentinien - Australien=>8
+/*	cout << felder.runDijkstra(41,27) << endl; //Argentinien - Australien=>8
 	stack<Land*> llist = felder.printDijkstraWay (27);
 	while(!llist.empty())
 	{
 		cout <<llist.top()->getId()<<endl;
 		llist.pop();
-	}
+        }*/
 }

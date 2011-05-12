@@ -31,30 +31,35 @@ class Ramdisk {
         bool storefile(string filename, string data);
         bool readfile(string filename, string& data);
         bool copyfile(string filenameto, string filenamefrom);
+
         string getDir() const;
 
         bool clear();
     private:
-        string dir;
+        //static string dirname="ramdisk/";
 };
 
 class Spieler {
     public:
-        Spieler(string name, int sid, Ramdisk* ramd);
+        Spieler(string command,int sid, Ramdisk* ramd);
         ~Spieler();
         bool actionStart(string& ret);
         bool actionAngreifen(string& ret);
+        bool actionVerteidigen(string& ret);
         bool actionVerstaerkung(string& ret);
+        bool actionBewegung(string& ret);
+        int getTroops() const;
         string doLog() const;
+        int getID() const;
+
+        void add(const int t1);
+        void sub(const int t1);
     private:
-        string filename;
-        string name;
+        string command;
         int id;
 
         Ramdisk* rd;
-
-        QProcess* process;
-        QStringList list;
+        int freieTruppen;
 
 };
 

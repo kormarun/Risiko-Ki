@@ -20,7 +20,6 @@
 #include "spieler.hpp"
 #include "common.hpp"
 
-
 char* itoa(int id)
 {
     char* i;
@@ -30,7 +29,7 @@ char* itoa(int id)
 
 /* Ramdisk
  * Initialisierung einer Ramdisk
- * @TODO: Code für LINUX + WINDOWS + Ersatzcode wenn keine Adminrechte -> Ersatzort für Ramdisk(~/tmp/)
+ * @TODO: Code für WINDOWS
  */
 Ramdisk::Ramdisk()
 {
@@ -56,7 +55,7 @@ Ramdisk::Ramdisk()
         cerr << "Konnte Ramdisk-Verzeichnis nicht mounten: Diese Aktion benötigt Root-Rechte" << endl << "Sie können (wenn auch langsamer) fortfahren" << endl;
     }
 
-    dir="ramdisk/";
+    //dirname="ramdisk/";
 #elif __WIN32__ || _MSC_VER
 /*KP*/
 #endif
@@ -73,7 +72,7 @@ Ramdisk::~Ramdisk()
     }
     else
     {
-        dir=system("rmdir ramdisk/");
+        system("rmdir ramdisk/");
     }
 #elif __WIN32__ || _MSC_VER
 /*KP*/
@@ -83,9 +82,7 @@ Ramdisk::~Ramdisk()
 bool Ramdisk::clear()
 {
 #ifdef __linux__ || __unix || __unix__
-    string s="rm -rf ";
-    s.append(dir);
-    s.append("/*");
+    string s="rm -rf ramdisk/*";
     int i = system(s.c_str());
     if(i!=0)
     {
@@ -102,9 +99,12 @@ bool Ramdisk::clear()
 
 bool Ramdisk::storefile(string filename, string data)
 {
-    filename.insert(0,dir);
+    filename.insert(0,"ramdisk/");//dirname);
+    cout <<filename<<endl;
+
     ofstream datei;
     datei.open(filename.c_str(),ios::out);
+
     if(datei.is_open())
     {
         datei << data;
@@ -122,19 +122,23 @@ bool Ramdisk::storefile(string filename, string data)
 
 bool Ramdisk::readfile(string filename, string& data)
 {
-    filename.insert(0,dir);
+    filename.insert(0,"ramdisk/");//dirname);
+
     ifstream datei;
     datei.open(filename.c_str(), ios::in);
     if(datei.is_open())
     {
-        string buffer;
-        datei >> buffer;
-        if(datei.fail())
+        char buffer[512];
+        while(datei.good())
         {
-            datei.close();
-            return false;
+            datei.getline(buffer,512);
+            if(datei.fail())
+            {
+                datei.close();
+                return false;
+            }
+            data.append(buffer);
         }
-        data = buffer;
         datei.close();
         return true;
     }
@@ -144,14 +148,17 @@ bool Ramdisk::readfile(string filename, string& data)
 bool Ramdisk::copyfile(string filenameto, string filenamefrom)
 {
 
-    filenameto.insert(0,dir);
+    filenameto.insert(0,"ramdisk/");//dirname);
 
     ifstream dateiin;
     dateiin.open(filenamefrom.c_str(), ios::in);
     if(dateiin.is_open())
     {
         string buffer;
-        dateiin >> buffer;
+        while(dateiin)
+        {
+            dateiin >> buffer;
+        }
         if(dateiin.fail())
         {
             dateiin.close();
@@ -180,55 +187,138 @@ bool Ramdisk::copyfile(string filenameto, string filenamefrom)
 
 string Ramdisk::getDir() const
 {
-    return dir;
+    return "ramdisk/";//dirname;
 }
 
-Spieler::Spieler(string name, int sid, Ramdisk* ramd)
+Spieler::Spieler(string command, int sid, Ramdisk* ramd)
 {
-    filename = name;
+    this->command = command;
     id = sid;
-    process = new QProcess();
-
-    list << " -sid " ;
-    list << itoa(sid);
 
     rd = ramd;
+    freieTruppen = 35;
 }
 
 Spieler::~Spieler()
 {
-    delete process;
+}
+
+int Spieler::getTroops() const
+{
+    return freieTruppen;
+}
+
+void Spieler::add(const int t1)
+{
+    this->freieTruppen+=t1;
+}
+void Spieler::sub(const int t1)
+{
+    this->freieTruppen-=t1;
 }
 
 bool Spieler::actionAngreifen(string& ret)
 {
-    rd->storefile("action","ATTACK");
-    process->start(filename.c_str(), list);
+
+    QProcess* process = new QProcess();
+    process->setWorkingDirectory("ramdisk/");
+
+    stringstream befehl;
+    befehl << id << endl << "ATTACK";
+
+    rd->storefile("action",befehl.str());
+    process->start(command.c_str());
     bool b = process->waitForFinished(5000);
-    if(b==false)
-        process->close();
+    process->close();
+    delete process;
+    b && rd->readfile("action",ret);
+
+    return !b;
+}
+
+bool Spieler::actionVerteidigen(string& ret)
+{
+    QProcess* process = new QProcess();
+    process->setWorkingDirectory("ramdisk/");
+
+    stringstream befehl;
+    befehl << id << endl << "VERTEIDIGEN";
+
+    rd->storefile("action",befehl.str());
+    process->start(command.c_str());
+    bool b = process->waitForFinished(5000);
+    process->close();
+    delete process;
+    b && rd->readfile("action",ret);
+    return !b;
 }
 
 bool Spieler::actionStart(string& ret){
-    if(!rd->storefile("action","GEBIETSBESETZEN"))
-    {
-        return false;
-    }
-    cout << "Data to file" << endl;
-    process->start(filename.c_str(), list);
-    bool b = process->waitForFinished(5000);
-    if(b==false)
-        process->close();
-    cout << "process stopped"<<endl;
-    string s;
-    if(!rd->readfile("action",s))
-    {
-        return false;
-    }
-    ret=s;
-    return true;
+    QProcess* process = new QProcess();
+    process->setWorkingDirectory("ramdisk/");
+
+
+    stringstream befehl;
+    befehl << id << endl << "GEBIETSBESETZEN NEU";
+
+    rd->storefile("action",befehl.str());
+    process->start(command.c_str());
+    bool b;
+    b= process->waitForFinished(5000);
+    process->close();
+    delete process;
+    //if(b)
+    sleep(1);
+        rd->readfile("action",ret);
+    cout << b<<endl;
+    return true;//b;
 }
 
-bool Spieler::actionVerstaerkung(string& ret){}
+bool Spieler::actionVerstaerkung(string& ret){
+    QProcess* process = new QProcess();
+    process->setWorkingDirectory("ramdisk/");
+
+
+    stringstream befehl;
+    befehl << id << endl << "VERSTAERKEN";
+
+    if(!rd->storefile("action",befehl.str()))
+    {
+        return false;
+    }
+    process->start(command.c_str());
+    bool b = process->waitForFinished(5000);
+    process->close();
+    delete process;
+
+    b && rd->readfile("action",ret);
+    return !b;
+}
+
+bool Spieler::actionBewegung(string& ret){
+    QProcess* process = new QProcess();
+    process->setWorkingDirectory("ramdisk/");
+
+
+    stringstream befehl;
+    befehl << id << endl << "BEWEGEN";
+
+    if(!rd->storefile("action",befehl.str()))
+    {
+        return false;
+    }
+    process->start(command.c_str());
+    bool b = process->waitForFinished(5000);
+    process->close();
+    delete process;
+
+    b && rd->readfile("action",ret);
+    return !b;
+}
+
+int Spieler::getID() const
+{
+    return id;
+}
 
 string Spieler::doLog() const {}

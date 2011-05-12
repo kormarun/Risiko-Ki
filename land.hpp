@@ -21,36 +21,40 @@
 #define LAND_H
 
 #include "common.hpp"
+#include "spieler.hpp"
 
 class Land {
 	public:
-		Land(string id);
+                Land(string id, int k,int iid);
 		~Land();
 
 		string getId() const;
-		Land* getPrevious() const;
-		int getDistance() const;
+                vector<Land*> getNext() const;
+                //int getDistance() const;
 
 		bool setID(string id);
-		bool setPrevious(Land* previous);
-		bool setDistance(int distance);
+                //bool setPrevious(Land* previous);
+                bool setNext(Land* next);
+                bool setNext(vector<Land*> next);
+                //bool setDistance(int distance);
 
-		//Spieler getSpieler();
+                Spieler* getSpieler() const;
+                int getSpielerID() const;
 		int getTroops() const;
 		int getNummer() const;
 		int getKontinent() const;
 
-		bool setSpieler();
-		bool setTroops();
-		bool setNummer();
-		bool setKontinent();
+                bool setSpieler(Spieler* s);
+                bool setTroops(int t);
+                bool setNummer(int i);
+                bool setKontinent(int k);
 	private:
-	//	Spieler spieler;//???
+                Spieler* spieler;
 		string id;
-		Land* previous;
-		int distanceFromStart;
+                vector<Land*> next;
 		
 		int Armeen;
 		int Kontinent;
+                int Nummer;
 };
 #endif

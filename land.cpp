@@ -19,11 +19,14 @@
 
 #include "land.hpp"
 
-Land::Land(string i)
+Land::Land(string i, int k, int id)
 {
-	id=i;
-	previous=NULL;
-	distanceFromStart = INT_MAX;
+        this->id=i;
+        Kontinent=k;
+        //next=NULL;
+        //distanceFromStart = INT_MAX;
+        spieler=NULL;
+        Nummer=id;
 	cout << "Land " << i << " erzeugt" <<endl;
 }
 
@@ -36,27 +39,81 @@ string Land::getId() const
 	return id;
 }
 
-Land* Land::getPrevious() const
+vector<Land*> Land::getNext() const
 {
-	return previous;
+        return next;
 }
 
-int Land::getDistance() const
+/*int Land::getDistance() const
 {
 	return distanceFromStart;
-}
+}*/
 
 bool Land::setID(string id)
 {
 	this->id=id;
 }
 
-bool Land::setPrevious(Land* previous)
+bool Land::setNext(vector<Land*> next)
 {
-	this->previous=previous;
+        this->next=next;
 }
 
-bool Land::setDistance(int distance)
+bool Land::setNext(Land* next)
+{
+    this->next.push_back(next);;
+}
+
+
+Spieler* Land::getSpieler() const
+{
+    return spieler;
+}
+
+int Land::getSpielerID() const
+{
+    if(spieler==NULL)
+        return -1;
+    return spieler->getID();
+}
+
+int Land::getTroops() const
+{
+    return Armeen;
+}
+
+
+int Land::getKontinent() const
+{
+    return Kontinent;
+}
+
+int Land::getNummer() const
+{
+    return Nummer;
+}
+
+bool Land::setSpieler(Spieler* s)
+{
+    spieler=s;
+}
+
+bool Land::setTroops(int i)
+{
+    Armeen=i;
+}
+
+bool Land::setNummer(int nummer)
+{
+    Nummer = nummer;
+}
+
+bool Land::setKontinent(int k)
+{
+    Kontinent=k;
+}
+
+/*bool Land::setDistance(int distance)
 {
 	distanceFromStart=distance;
-}
+}*/
